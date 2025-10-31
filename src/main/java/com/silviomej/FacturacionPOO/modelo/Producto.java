@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Files;
 import org.openxava.annotations.Money;
+import org.openxava.annotations.TextArea;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -21,6 +22,14 @@ public class Producto {
 
     @Money
     BigDecimal precio;
+
+    @Files
+    @Column(length=32)
+    String imagen;
+
+    @TextArea
+    String comentarios;
+
 
 
     @ManyToOne(
