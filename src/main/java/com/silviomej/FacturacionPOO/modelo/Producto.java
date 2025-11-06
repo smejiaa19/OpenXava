@@ -37,4 +37,8 @@ public class Producto {
             optional=true)
     @DescriptionsList
     Categoria categoria;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @DescriptionsList
+    Autor autor;
 }
