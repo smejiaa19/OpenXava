@@ -15,7 +15,11 @@ import javax.persistence.*;
 
 @Entity @Getter @Setter
 @View(members=
-        "anyo, numero, fecha;" + "cliente")
+        "anyo, numero, fecha;" +
+                "cliente;" +
+                "detalles;" +
+                "observaciones;"
+)
 public class Factura {
     @Id
     @GeneratedValue(generator="system-uuid")
@@ -43,6 +47,7 @@ public class Factura {
     // Anyo del calculador antes de hacer el calculo.
 
     @ManyToOne(fetch=FetchType.LAZY, optional=false)
+            @ReferenceView("Simple")
     Cliente cliente;
 
     @ElementCollection
