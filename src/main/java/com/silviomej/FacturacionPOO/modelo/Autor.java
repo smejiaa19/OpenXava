@@ -2,7 +2,6 @@ package com.silviomej.FacturacionPOO.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.Hidden;
 import org.openxava.annotations.ListProperties;
@@ -11,7 +10,8 @@ import org.openxava.annotations.Required;
 import javax.persistence.*;
 import java.util.Collection;
 
-@Entity @Getter
+@Entity
+@Getter
 @Setter
 public class Autor {
     @Id @GeneratedValue(generator = "system-uuid") @Hidden

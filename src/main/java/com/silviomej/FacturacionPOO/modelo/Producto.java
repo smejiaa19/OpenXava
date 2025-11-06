@@ -30,7 +30,9 @@ public class Producto {
     @TextArea
     String comentarios;
 
-
+    @ManyToOne(fetch=FetchType.LAZY)
+    @DescriptionsList
+    Autor autor;
 
     @ManyToOne(
             fetch = FetchType.LAZY,
@@ -38,7 +40,4 @@ public class Producto {
     @DescriptionsList
     Categoria categoria;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @DescriptionsList
-    Autor autor;
 }
